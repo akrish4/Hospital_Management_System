@@ -1,0 +1,78 @@
+{% extends 'base.html' %} 
+{% block title %} Contact {% endblock title %}
+{%block body %}
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+<marquee behavior="" direction="left"
+  >Fill the details , our team will get in touch with you.</marquee
+>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-2"></div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mt-4">
+          <div class="card-body">
+            <form action="/contacts" method="post">
+              
+              <div class="form-group">
+                <h4 class="text-center">Contact us</h4>
+
+                <label for="username">FullName</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="pass1">Email Address</label>
+                <input
+                  type="Email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                  class="form-control"
+                  name="description"
+                  id="description"
+                  rows="2"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-warning btn-lg">
+                submit
+              </button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

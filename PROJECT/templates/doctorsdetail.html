@@ -1,0 +1,37 @@
+{% extends 'base1.html' %}
+
+{% block title %}
+Booking
+{% endblock title %}
+
+
+{% block body %}
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">DID</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">DOCTOR NAME</th>
+      <th scope="col">DEPT</th>
+    
+    
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in query %}
+    <tr>
+      <th scope="row">{{post.did}}</th>
+      <td>{{post.email}}</td>
+      <td>{{post.doctorname}}</td>
+      <td>{{post.dept}}</td>
+     
+    
+    </tr>
+{% endfor %}
+  
+  </tbody>
+</table>
+
+
+{% endblock body %}
