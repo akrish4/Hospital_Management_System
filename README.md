@@ -1,4 +1,4 @@
- <h1 align="center">HOSPITAL MANGEMENT SYSTEM</h1> 
+ <h1 align="center">HOSPITAL MANAGEMENT SYSTEM</h1> 
 
 - The project **Hospital Management system** includes : 
    -  **Registration of patients** , 
